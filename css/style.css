@@ -1,0 +1,79 @@
+/* Shenzhen UAV Intelligence — site styles (light theme, print-friendly) */
+:root {
+  --ink: #1a2332; --sub: #5a6b80; --line: #d9e1ea;
+  --accent: #0f5cad; --accent-bg: #eef4fb;
+  --bg: #ffffff; --alt: #f5f7fa;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+       color: var(--ink); background: var(--bg); font-size: 16px; line-height: 1.7; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+.wrap.narrow { max-width: 640px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* top bar */
+.topbar { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 10; }
+.topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+.brand { font-weight: 700; letter-spacing: .04em; color: var(--ink); font-size: 15px; }
+nav a { margin-left: 22px; font-size: 14px; color: var(--sub); }
+nav a:hover { color: var(--accent); }
+
+/* hero */
+.hero { background: linear-gradient(180deg, var(--accent-bg), #fff); border-bottom: 1px solid var(--line);
+        padding: 72px 0 64px; }
+.kicker { color: var(--accent); letter-spacing: .22em; text-transform: uppercase; font-size: 12.5px; margin-bottom: 16px; }
+.hero h1 { font-size: 34px; line-height: 1.25; max-width: 760px; margin-bottom: 16px; }
+.lede { font-size: 18px; color: var(--sub); max-width: 720px; }
+.hero-cta { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 11px 22px; border: 1.5px solid var(--accent); border-radius: 6px;
+       font-weight: 600; font-size: 15px; color: var(--accent); }
+.btn.primary { background: var(--accent); color: #fff; }
+.btn:hover { text-decoration: none; opacity: .92; }
+
+/* sections */
+.section { padding: 56px 0; }
+.section.alt { background: var(--alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+h2 { font-size: 24px; margin-bottom: 22px; }
+h3 { font-size: 17px; margin-bottom: 8px; color: var(--accent); }
+.note { color: var(--sub); font-size: 13.5px; margin-top: 12px; }
+
+/* grids & cards */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.strip { padding: 34px 0; border-bottom: 1px solid var(--line); background: #fff; }
+.strip div b { display: block; margin-bottom: 6px; }
+.strip div span { color: var(--sub); font-size: 14.5px; }
+.card { border: 1px solid var(--line); border-radius: 8px; padding: 20px 22px; background: #fff; }
+.card p { color: var(--sub); font-size: 14.5px; }
+
+/* issues list */
+.issues { list-style: none; }
+.issues li { padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+.issues .date { font-size: 13px; color: var(--sub); font-variant-numeric: tabular-nums; }
+.issues .tag { font-size: 11.5px; border: 1px solid var(--line); border-radius: 10px; padding: 1px 9px; color: var(--sub); }
+
+/* services table */
+table.services { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+.services th, .services td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.services th { background: var(--accent-bg); }
+
+/* subscribe */
+.subform { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.subform input[type=email] { flex: 1 1 260px; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 6px; font-size: 15px; }
+.subform .consent { flex-basis: 100%; font-size: 12.5px; color: var(--sub); display: flex; gap: 8px; align-items: flex-start; }
+
+/* footer */
+footer { background: var(--ink); color: #cfd8e3; padding: 36px 0; font-size: 13.5px; }
+footer a { color: #9ec2e8; }
+footer .small { opacity: .65; margin-top: 12px; }
+footer p { margin: 6px 0; }
+
+@media (max-width: 760px) {
+  .grid3, .grid2 { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 27px; }
+}
+@media print {
+  .topbar, .hero-cta, .subform { display: none; }
+}
